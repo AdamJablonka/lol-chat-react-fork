@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-slate-300">
         <div className="border w-2/3 flex">
-            <Sidebar/>
+            {/* <Sidebar/> */}
             <Chat/>
         </div>
     </div>

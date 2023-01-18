@@ -5,16 +5,19 @@ import { useNavigate } from 'react-router-dom'
 const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError ] = useState('')
     const {user, signUp} = UserAuth()
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError('')
         try {
           await signUp(email, password);
-          navigate('/login')
+          navigate('/')
         } catch (error) {
           console.log(error);
+          setError(error.message)
         }
     }
 
@@ -29,7 +32,7 @@ const Register = () => {
                     <input input onChange={(e) => setPassword(e.target.value)}
                     className="border" type="password" placeholder="password"/>
                     <button>Sign up</button> 
-                    {/* {err && <span>Something went wrong</span>} */}
+                    {error && <span>Something went wrong {error}</span>}
                     </form>                       
                 <p className="flex justify-center" >Already registered? Login</p>
   
