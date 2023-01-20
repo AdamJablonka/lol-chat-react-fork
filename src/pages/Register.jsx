@@ -14,6 +14,7 @@ const Register = () => {
         setError('')
         try {
           await signUp(email, password);
+          console.log(user)
           navigate('/')
         } catch (error) {
           console.log(error);

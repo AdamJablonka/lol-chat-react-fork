@@ -1,11 +1,18 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import React, { useState } from 'react'
+import { UserAuth } from '../context/AuthContext'
 import {auth, db} from '../firebase'
 
 const Input = () => {
   const [input, setInput] = useState('')
+  const {user} = UserAuth()
+
   const sendMessage = async (e) => {
     e.preventDefault()
+    if (user.uid === "uiuu18yUhQXgD1fuHs6XCBI1hlJ2"){
+      console.log("I FOUND MY ADMIN!")
+    }
+    console.log(user.uid)
     if (input === ''){
       alert('Please enter a valid message')
       return
