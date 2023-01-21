@@ -4,8 +4,6 @@ import { UserAuth } from '../context/AuthContext';
 
 const Navbar = () => {
     const {user, logOut} = UserAuth()
-    const navigate = useNavigate()
-
     const handleLogout = async () => {
         try{
             await logOut()
