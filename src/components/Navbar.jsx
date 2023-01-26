@@ -12,7 +12,7 @@ const Navbar = () => {
             console.log(error)
         }
     }
-    // console.log(user)
+
   return (
     <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
         <Link to='/Home'>
@@ -38,7 +38,7 @@ const Navbar = () => {
             </Link>
             <Link to='/signup'>
                 <button className="bg-red-600 px-6 py-2 rounded cursor-pointer text-white">
-                    Sign up
+                    Sign up and logout
                 </button>
             </Link>
         </div>)
