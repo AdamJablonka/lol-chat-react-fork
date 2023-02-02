@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
 const Navbar = () => {
@@ -7,7 +7,7 @@ const Navbar = () => {
     const handleLogout = async () => {
         try{
             await logOut()
-            navigate('/signup')
+            Navigate('/signup')
         } catch(error){
             console.log(error)
         }
